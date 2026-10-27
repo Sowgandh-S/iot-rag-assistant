@@ -1,0 +1,17 @@
+Home Sensor Guide
+
+Temperature:
+- This example guide uses 18–26 degrees Celsius as a general indoor comfort reference.
+- A reading outside that range is a reason to check the room, not a diagnosis or an automatic safety warning.
+- Sensor readings can be inaccurate. Check device placement or compare with another thermometer if a value seems unexpected.
+
+Humidity:
+- This example guide uses 30–60 percent relative humidity as a general indoor reference.
+- A single reading does not establish a health or building issue.
+- Compare readings over time and check sensor placement before drawing conclusions.
+
+Assistant behavior:
+- Include the room and timestamp when referring to sensor readings.
+- Explain which guide statements support the answer.
+- If the guide does not answer the question, say there is not enough information in the guide.
+- Do not control home devices or present this example guide as professional advice.
