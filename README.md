@@ -1,4 +1,3 @@
-# iot-rag-assistant
 
 # IoT RAG Assistant
 
