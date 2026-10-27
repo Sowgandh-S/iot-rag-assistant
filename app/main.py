@@ -1,11 +1,12 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Query
 
+from app.retrieval import retrieve_passages
 from app.sensor_data import summarize_location
 
 app = FastAPI(
     title="IoT Home Sensor Assistant",
-    description="An educational API for summarizing fictional home sensor readings.",
-    version="0.1.0",
+    description="A learning API for sample home sensor data and guide search.",
+    version="0.2.0",
 )
 
 
@@ -17,3 +18,17 @@ def health_check():
 @app.get("/sensors/{location}/summary")
 def get_sensor_summary(location: str):
     return summarize_location(location)
+
+
+@app.get("/guide/search")
+def search_guide(
+    question: str = Query(..., min_length=2, description="Question to search for"),
+):
+    passages = retrieve_passages(question)
+
+    return {
+        "question": question,
+        "source": "data/home_sensor_guide.txt",
+        "passages": passages,
+        "found": bool(passages),
+    }
